@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow & Go - Skincare Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Fungsi untuk menampilkan dan menyembunyikan popup login
+    function toggleLoginPopup() {
+      const popup = document.getElementById('login-popup');
+      popup.classList.toggle('show');  // Menambahkan/menyembunyikan kelas 'show'
+    }
+
+    // Fungsi untuk login (sederhana)
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username && password) {
+        alert("Welcome, " + username + "!");
+        toggleLoginPopup(); // Menutup popup setelah login
+      } else {
+        alert("Please enter both username and password.");
+      }
+    }
+
+    // Fungsi untuk registrasi (sederhana)
+    function signup() {
+      alert("Redirecting to signup page...");
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header & Navigasi -->
+  <header>
+    <a href="#home">
+      <img src="Images/skindore.png" alt="Glow & Go Logo" class="logo" />
+    </a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="javascript:void(0);" onclick="toggleLoginPopup()">Login</a> <!-- Tombol login -->
+    </nav>
+  </header>
+
+  <!-- Cover Section (Gambar atau Desain) -->
+  <section id="home" class="hero">
+    <div class="cover-image">
+      <img src="img/cover.jpg" alt="Glow & Go Skincare" />
+    </div>
+    <h2>Welcome to Glow & Go ✨</h2>
+    <p>Your daily skincare essentials, now just a click away!</p>
+  </section>
+
+  <!-- Produk Section -->
+  <section id="products" class="products">
+    <h3>Our Best Sellers</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="img/cleanser.jpg" alt="Gentle Cleanser" />
+        <h4>Gentle Facial Cleanser</h4>
+        <p>IDR 85.000</p>
+        <button onclick="addToCart('Gentle Facial Cleanser')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="img/serum.jpg" alt="Glow Serum" />
+        <h4>Vitamin C Glow Serum</h4>
+        <p>IDR 120.000</p>
+        <button onclick="addToCart('Vitamin C Glow Serum')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="img/moisturizer.jpg" alt="Hydrating Moisturizer" />
+        <h4>Hydrating Moisturizer</h4>
+        <p>IDR 95.000</p>
+        <button onclick="addToCart('Hydrating Moisturizer')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni Section -->
+  <section id="testimonials" class="testimonials">
+    <h3>What Our Customers Say</h3>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Glow & Go has completely transformed my skincare routine! My skin feels so fresh and hydrated."</p>
+        <h4>- Anna, 28</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"I love the Vitamin C serum! It gives me a glowing complexion every day."</p>
+        <h4>- Ryan, 35</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"The Hydrating Moisturizer is my holy grail! It keeps my skin moisturized all day."</p>
+        <h4>- Sarah, 23</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Popup (Hidden by default) -->
+  <div id="login-popup" class="login-popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="toggleLoginPopup()">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+
+        <button type="button" onclick="login()">Login</button>
+        <p>Don't have an account? <a href="javascript:void(0);" onclick="signup()">Sign Up</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Glow & Go. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
